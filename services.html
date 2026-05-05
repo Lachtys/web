@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ThoPos | QA Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-l border-b border-white/30 shadow-lg">
+  <nav class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <a href="/" class="text-xl font-bold" style="color: #1d4ed8">ThoPos</a>
+        </div>
+        <ul class="hidden md:flex items-center gap-8 justify-center flex-1">
+        <li><a href="/" class="text-gray-700 hover:text-black transition-colors font-medium">Home</a></li>
+        <li><a href="/#about" class="text-gray-700 hover:text-black transition-colors font-medium">About</a></li>
+        <li><a href="/projects.html" class="text-gray-700 hover:text-black transition-colors font-medium">Projects</a></li>
+        <li><a href="/blog.html" class="text-gray-700 hover:text-black transition-colors font-medium">Blog</a></li>
+        <li><a href="/services.html" class="text-gray-700 hover:text-black transition-colors font-medium">Services</a></li>
+        <li><a href="/#contact" class="text-gray-700 hover:text-black transition-colors font-medium">Contact</a></li>
+        </ul>
+
+        <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-label="Toggle menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden px-8 pb-4 pt-2 space-y-2 bg-white/20 backdrop-blur-lg border-t border-white/30">
+        <a href="/" class="block text-gray-700 hover:text-black transition-colors font-medium">Home</a>
+        <a href="/#about" class="block text-gray-700 hover:text-black transition-colors font-medium">About</a>
+        <a href="/projects.html" class="block text-gray-700 hover:text-black transition-colors font-medium">Projects</a>
+        <a href="/blog.html" class="block text-gray-700 hover:text-black transition-colors font-medium">Blog</a>
+        <a href="/services.html" class="block text-gray-700 hover:text-black transition-colors font-medium">Services</a>
+        <a href="/#contact" class="block text-gray-700 hover:text-black transition-colors font-medium">Contact</a>
+    </div>
+</header>
+
+<script type="module">
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+        window.scrollTo(0, 0);
+        }, 50);
+    });
+    window.addEventListener("scroll", () => {
+        const e = document.getElementById("header");
+        window.scrollY > 100 ? e?.classList.add("bg-white/80") : e?.classList.remove("bg-white/80")
+    });
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+        }
+        });
+    }, {
+        threshold: 0.08
+    });
+
+  revealElements.forEach(el => observer.observe(el));
+</script>
+
+<!-- Hero Section -->
+<section class="relative isolate overflow-hidden bg-white pt-24 md:pt-32 pb-12 md:pb-20 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll" style="--accent-color: #1d4ed8">
+    <div class="absolute inset-0 -z-10" style="background: radial-gradient(ellipse 800px 1200px at 0% 0%, #1d4ed840 0%, #1d4ed825 20%, #1d4ed810 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)"></div>
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">QA Consulting Services</h1>
+            <p class="text-lg sm:text-xl text-gray-600">Expert guidance for building robust, automated quality assurance processes</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-12 md:py-20 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            
+            <!-- Service 1 -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6" style="color: #1d4ed8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Test Automation Strategy</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">I'll assess your current testing practices and develop a comprehensive automation strategy tailored to your team's needs, tools, and timelines.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Test pyramid optimization</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Tool selection & evaluation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Implementation roadmap</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6" style="color: #1d4ed8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Cypress & Playwright Implementation</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Setup and implementation of Cypress or Playwright frameworks with best practices, architecture patterns, and maintainable test code.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Framework setup & configuration</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Page Object Model architecture</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Team training & documentation</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6" style="color: #1d4ed8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">CI/CD Pipeline Integration</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Design and implement automated testing within your CI/CD pipeline using Jenkins, GitHub Actions, GitLab CI, or other platforms.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Pipeline configuration & orchestration</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Automated test reporting & notifications</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Performance & quality gates</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6" style="color: #1d4ed8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Data Validation & Analytics Testing</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive testing of data pipelines, PowerBI dashboards, and analytics platforms with SQL-based validation and accuracy checks.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Data integrity & quality testing</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>PowerBI & Tableau validation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Performance optimization</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll md:col-span-2 lg:col-span-1">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6" style="color: #1d4ed8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">QA Team Training & Mentoring</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Upskill your QA team with hands-on training in test automation, best practices, and modern testing methodologies.</p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Technical workshops & training sessions</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Code reviews & best practices guidance</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 mr-3 flex-shrink-0"></span>
+                        <span>Continuous mentorship & support</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-12 md:py-20 bg-white opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">My Consulting Process</h2>
+        
+        <!-- Desktop View with Arrows -->
+        <div class="hidden lg:block">
+            <div class="flex items-center justify-between gap-4">
+                <!-- Step 1 -->
+                <div class="flex-1 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-2xl shadow-lg">1</div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Discovery & Assessment</h3>
+                    <p class="text-sm text-gray-600">Understand your current state, goals, challenges, and team capabilities</p>
+                </div>
+
+                <!-- Arrow 1 -->
+                <div class="flex-shrink-0 pb-8">
+                    <svg class="w-12 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex-1 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-2xl shadow-lg">2</div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Strategy & Planning</h3>
+                    <p class="text-sm text-gray-600">Develop a customized roadmap with clear milestones and deliverables</p>
+                </div>
+
+                <!-- Arrow 2 -->
+                <div class="flex-shrink-0 pb-8">
+                    <svg class="w-12 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex-1 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-2xl shadow-lg">3</div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Implementation & Support</h3>
+                    <p class="text-sm text-gray-600">Execute the plan with hands-on guidance and knowledge transfer</p>
+                </div>
+
+                <!-- Arrow 3 -->
+                <div class="flex-shrink-0 pb-8">
+                    <svg class="w-12 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex-1 text-center">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-2xl shadow-lg">4</div>
+                    <h3 class="font-semibold text-gray-900 mb-2 text-lg">Optimization & Handoff</h3>
+                    <p class="text-sm text-gray-600">Refine processes and ensure your team can maintain independently</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile View (Vertical) -->
+        <div class="lg:hidden space-y-6">
+            <!-- Step 1 -->
+            <div class="text-center">
+                <div class="flex items-center justify-center w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-xl shadow-lg">1</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Discovery & Assessment</h3>
+                <p class="text-sm text-gray-600">Understand your current state, goals, challenges, and team capabilities</p>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="flex justify-center">
+                <svg class="w-8 h-8 text-blue-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center">
+                <div class="flex items-center justify-center w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-xl shadow-lg">2</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Strategy & Planning</h3>
+                <p class="text-sm text-gray-600">Develop a customized roadmap with clear milestones and deliverables</p>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="flex justify-center">
+                <svg class="w-8 h-8 text-blue-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center">
+                <div class="flex items-center justify-center w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-xl shadow-lg">3</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Implementation & Support</h3>
+                <p class="text-sm text-gray-600">Execute the plan with hands-on guidance and knowledge transfer</p>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="flex justify-center">
+                <svg class="w-8 h-8 text-blue-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="text-center">
+                <div class="flex items-center justify-center w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full font-bold text-xl shadow-lg">4</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Optimization & Handoff</h3>
+                <p class="text-sm text-gray-600">Refine processes and ensure your team can maintain independently</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Stack Section -->
+<section class="py-12 md:py-20 bg-gray-50 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technologies I Work With</h2>
+            <p class="text-lg text-gray-600">Modern tools and frameworks for quality assurance</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Cypress -->
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="#1d4ed8">
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm3-15H9v6h6V7z"/>
+                    </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-900">Cypress</p>
+                <p class="text-xs text-gray-500">E2E Testing</p>
+            </div>
+
+            <!-- Playwright -->
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="#9333ea">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                    </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-900">Playwright</p>
+                <p class="text-xs text-gray-500">Browser Testing</p>
+            </div>
+
+            <!-- Jenkins -->
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="#dc2626">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                    </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-900">Jenkins</p>
+                <p class="text-xs text-gray-500">CI/CD</p>
+            </div>
+
+            <!-- Docker -->
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="#1d4ed8">
+                        <path d="M5 9.5h2v2H5v-2m3 0h2v2H8v-2m3 0h2v2h-2v-2m3 0h2v2h-2v-2M5 13h2v2H5v-2m3 0h2v2H8v-2m3 0h2v2h-2v-2m3 0h2v2h-2v-2M5 16.5h2v2H5v-2m3 0h2v2H8v-2m3 0h2v2h-2v-2m3 0h2v2h-2v-2M3 5h18v2H3V5z"/>
+                    </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-900">Docker</p>
+                <p class="text-xs text-gray-500">Containerization</p>
+            </div>
+
+            <!-- Postman -->
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="#ea580c">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-900">Postman</p>
+                <p class="text-xs text-gray-500">API Testing</p>
+            </div>
+
+            <!-- SQL -->
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3">
+                <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="#16a34a">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h4v2h-4v-2zm0-5h4v2h-4v-2zm0-5h4v2h-4V7z"/>
+                    </svg>
+                </div>
+                <p class="text-sm font-semibold text-gray-900">SQL</p>
+                <p class="text-xs text-gray-500">Data Testing</p>
+            </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-200">
+            <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Also Experienced With</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">Git</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">GitHub Actions</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">GitLab CI</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">Appium</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">Maestro</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">JavaScript</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">REST APIs</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-12 md:py-20 bg-white opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+            <details class="bg-gray-50 rounded-lg p-6 cursor-pointer group hover:bg-gray-100 transition-colors">
+                <summary class="flex justify-between items-center font-semibold text-gray-900 text-lg">
+                    How long does a typical consulting engagement last?
+                    <svg class="w-6 h-6 text-blue-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">Engagements typically range from 2-12 weeks depending on scope. We start with a discovery phase to assess your needs and create a custom timeline.</p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 cursor-pointer group hover:bg-gray-100 transition-colors">
+                <summary class="flex justify-between items-center font-semibold text-gray-900 text-lg">
+                    Do you offer remote consulting?
+                    <svg class="w-6 h-6 text-blue-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">Yes, all of my consulting services are available remotely. We communicate via video calls, emails, and collaborative tools.</p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 cursor-pointer group hover:bg-gray-100 transition-colors">
+                <summary class="flex justify-between items-center font-semibold text-gray-900 text-lg">
+                    What if my team uses different tools than you specialize in?
+                    <svg class="w-6 h-6 text-blue-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">No problem! The principles of good QA are universal. I can adapt my approach to your existing tools and help optimize your current setup.</p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 cursor-pointer group hover:bg-gray-100 transition-colors">
+                <summary class="flex justify-between items-center font-semibold text-gray-900 text-lg">
+                    Can you help with ongoing support after the engagement?
+                    <svg class="w-6 h-6 text-blue-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">Absolutely! I offer hourly consulting and retainer packages for teams that need continued support and mentorship.</p>
+            </details>
+
+            <details class="bg-gray-50 rounded-lg p-6 cursor-pointer group hover:bg-gray-100 transition-colors">
+                <summary class="flex justify-between items-center font-semibold text-gray-900 text-lg">
+                    How do you measure the success of a consulting project?
+                    <svg class="w-6 h-6 text-blue-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </summary>
+                <p class="text-gray-600 mt-4 leading-relaxed">We establish clear KPIs during discovery - things like test coverage increase, bug detection improvement, CI/CD efficiency, and team confidence with automation.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Ready to improve your QA process?</h2>
+        <p class="text-lg text-gray-600 mb-8">Let's discuss your specific needs and find the right consulting solution for your team</p>
+        <a href="mailto:hy3nna@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold hover:shadow-lg hover:-translate-y-1">
+            Get in Touch
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="relative bg-gray-50 border-t border-gray-200 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+    <div class="mx-auto max-w-6xl px-6 py-12 lg:px-8 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div class="flex flex-col gap-4">
+                <h3 class="text-2xl font-bold text-gray-800">Tomáš Posiřil</h3>
+                <p class="text-base text-gray-600">QA Consultant & Test Engineer</p>
+                <div class="flex gap-x-6">
+                   <a href="mailto:hy3nna@gmail.com" aria-label="Email" class="text-gray-600 transition-colors duration-300 hover:text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                        <path d="M3 7l9 6l9 -6"></path>
+                    </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tomáš-posiřil-b45b7030b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-600 transition-colors duration-300 hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M8 11v5"></path>
+                            <path d="M8 8v.01"></path>
+                            <path d="M12 16v-5"></path>
+                            <path d="M16 16v-3a2 2 0 1 0 -4 0"></path>
+                            <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/Lachtys" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-600 transition-colors duration-300 hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Thopos_studio" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-gray-600 transition-colors duration-300 hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-4 p-4 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
+                <nav class="flex flex-wrap gap-x-8 justify-center md:justify-end">
+                <a href="/" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">Home</a>
+                <a href="/#about" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">About</a>
+                <a href="/projects.html" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">Projects</a>
+                <a href="/blog.html" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">Blog</a>
+                <a href="/services.html" class="text-sm text-gray-600 hover:text-gray-800 transition-colors">Services</a>
+                </nav>
+                <p class="text-sm text-gray-500 text-center md:text-right">
+                © 2026 Tomáš Posiřil. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
