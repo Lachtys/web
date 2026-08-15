@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tomáš Posiřil — QA Consultant &amp; Test Engineer specializing in Cypress, Playwright, and Jenkins CI/CD.">
-    <title>ThoPos - QA Consultant &amp; Test Engineer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4ed8'/><text x='16' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='white' text-anchor='middle'>T</text></svg>">
+    <title>ThoPos - QA Consultant & Test Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-lg border-b border-white/30 shadow-lg">
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-l border-b border-white/30 shadow-lg">
   <nav class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
         <div class="flex items-center gap-2">
             <a href="./" class="text-xl font-bold" style="color: #1d4ed8">ThoPos</a>
@@ -106,37 +105,6 @@
 
             revealElements.forEach(el => observer.observe(el));
         }
-
-        // Active nav highlight
-        const pg = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('header nav ul li a').forEach(a => {
-            const href = a.getAttribute('href');
-            if (href === './#about' || href === './#contact') return;
-            const page = href.replace('./', '').split('#')[0] || 'index.html';
-            if (page === pg) a.classList.add('nav-active');
-        });
-
-        // Typewriter animation
-        (function(){
-            const words = [
-                'QA Consultant & Test Engineer',
-                'Cypress & Playwright Specialist',
-                'CI/CD Pipeline Engineer',
-                'Security & Resilience Tester',
-                'PowerBI & Data Validator'
-            ];
-            const el = document.getElementById('typewriter-text');
-            if (!el) return;
-            let wi = 0, ci = 0, deleting = false;
-            function tick() {
-                const word = words[wi];
-                el.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
-                if (!deleting && ci > word.length) { deleting = true; setTimeout(tick, 1800); return; }
-                if (deleting && ci < 0) { deleting = false; wi = (wi + 1) % words.length; ci = 0; setTimeout(tick, 300); return; }
-                setTimeout(tick, deleting ? 40 : 80);
-            }
-            setTimeout(tick, 1200);
-        })();
     </script>
     <section>
         <div id="hero" class="relative isolate overflow-hidden bg-white py-24 md:h-screen opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll" style="--accent-color: #1d4ed8">
@@ -178,10 +146,6 @@
             </svg>
             <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-green-50 text-green-700 border border-green-200 mb-6 animate-fade-in">
-                        <span class="w-2 h-2 rounded-full bg-green-500" style="animation: pulse-dot 2s ease-in-out infinite;"></span>
-                        Available for new projects
-                    </div>
                     <h2 class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in">
                     Welcome! 👋
                     </h2>
@@ -189,7 +153,7 @@
                         I'm 
                         <span style="font-family: 'Audiowide', sans-serif; color:#1d4ed8">Tomáš Posiřil</span>
                     </h1>
-                    <p class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></p>
+                    <p class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400">QA Consultant & Test Engineer | Cypress | Playwright | Jenkins CI/CD</p>
                     
                     <!-- New CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10 md:mt-12 animate-fade-in animation-delay-500">
@@ -511,24 +475,24 @@
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center">
-                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2">2+</div>
-                        <p class="text-blue-100 text-lg">Years in Automation</p>
-                        <p class="text-blue-200 text-sm mt-2">Building reliable QA systems</p>
+                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2">70%</div>
+                        <p class="text-blue-100 text-lg">Test Time Reduced</p>
+                        <p class="text-blue-200 text-sm mt-2">Through automation</p>
                     </div>
                     <div class="text-center">
                         <div class="text-4xl sm:text-5xl font-bold text-white mb-2">50+</div>
                         <p class="text-blue-100 text-lg">Projects Delivered</p>
-                        <p class="text-blue-200 text-sm mt-2">From startups to enterprise</p>
+                        <p class="text-blue-200 text-sm mt-2">Across industries</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2">5+</div>
-                        <p class="text-blue-100 text-lg">Tools & Frameworks</p>
-                        <p class="text-blue-200 text-sm mt-2">Cypress · Playwright · Jenkins · Appium · Docker</p>
+                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2">5★</div>
+                        <p class="text-blue-100 text-lg">Client Satisfaction</p>
+                        <p class="text-blue-200 text-sm mt-2">Average rating</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2">∞</div>
-                        <p class="text-blue-100 text-lg">Edge Cases to Find</p>
-                        <p class="text-blue-200 text-sm mt-2">The fun never stops</p>
+                        <div class="text-4xl sm:text-5xl font-bold text-white mb-2">1000+</div>
+                        <p class="text-blue-100 text-lg">Bugs Caught</p>
+                        <p class="text-blue-200 text-sm mt-2">Before production</p>
                     </div>
                 </div>
             </div>
@@ -702,20 +666,6 @@
         </section>
     </section>
 
-    <!-- 
-        TODO: Contact Form — Formspree
-        When ready, replace the mailto: links with a real form:
-          1. Sign up free at https://formspree.io
-          2. Create a form and copy your endpoint (e.g. https://formspree.io/f/xyzabc)
-          3. Add this inside the footer contact div:
-
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-4 mt-6">
-            <input  type="text"     name="name"    required placeholder="Your name"    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" />
-            <input  type="email"    name="email"   required placeholder="Your email"   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" />
-            <textarea              name="message" required placeholder="Your message" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 h-32"></textarea>
-            <button type="submit" class="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold">Send Message</button>
-        </form>
-    -->
     <footer id="contact" class="relative bg-gray-50 border-t border-gray-200 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
         <div class="mx-auto max-w-6xl px-6 py-12 lg:px-8 opacity-0 translate-y-8 transition-all duration-700 reveal-on-scroll">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
@@ -778,18 +728,5 @@
             </svg>
         </div>
     </footer>
-
-    <!-- Scroll to Top -->
-    <button id="scroll-to-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:999;width:44px;height:44px;background:#1d4ed8;color:white;border:none;border-radius:50%;cursor:pointer;box-shadow:0 4px 14px rgba(29,78,216,0.4);transition:all 0.3s ease;align-items:center;justify-content:center;">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
-    </button>
-    <script>
-        (function(){
-            const btn = document.getElementById('scroll-to-top');
-            window.addEventListener('scroll', () => {
-                btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-            });
-        })();
-    </script>
 </body>
 </html>

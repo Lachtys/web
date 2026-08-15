@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="QA insights and testing articles by Tomáš Posiřil — tips on test automation, CI/CD, and software quality.">
-    <title>Blog - ThoPos | QA Insights &amp; Testing News</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4ed8'/><text x='16' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='white' text-anchor='middle'>T</text></svg>">
+    <title>Blog - ThoPos | QA Insights & Testing News</title>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-lg border-b border-white/30 shadow-lg">
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-l border-b border-white/30 shadow-lg">
   <nav class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
         <div class="flex items-center gap-2">
             <a href="./" class="text-xl font-bold" style="color: #1d4ed8">ThoPos</a>
@@ -70,15 +69,6 @@
     });
 
   revealElements.forEach(el => observer.observe(el));
-
-  // Active nav highlight
-  const pg = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('header nav ul li a').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href === './#about' || href === './#contact') return;
-      const page = href.replace('./', '').split('#')[0] || 'index.html';
-      if (page === pg) a.classList.add('nav-active');
-  });
 </script>
 
 <!-- Hero Section -->
@@ -232,19 +222,6 @@
         </div>
     </div>
 </footer>
-
-<!-- Scroll to Top -->
-<button id="scroll-to-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:999;width:44px;height:44px;background:#1d4ed8;color:white;border:none;border-radius:50%;cursor:pointer;box-shadow:0 4px 14px rgba(29,78,216,0.4);transition:all 0.3s ease;align-items:center;justify-content:center;">
-    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
-<script>
-    (function(){
-        const btn = document.getElementById('scroll-to-top');
-        window.addEventListener('scroll', () => {
-            btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-        });
-    })();
-</script>
 
 </body>
 </html>
